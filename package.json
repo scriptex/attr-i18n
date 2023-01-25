@@ -1,0 +1,53 @@
+{
+	"name": "attr-i18n",
+	"version": "1.0.0",
+	"description": "Internationalization for Vanilla JS projects",
+	"keywords": [
+		"i18n",
+		"translate",
+		"translation",
+		"vanilla i18n",
+		"vanilla translate",
+		"vanilla translation",
+		"internationalization",
+		"vanilla internationzation"
+	],
+	"homepage": "https://attr-i18n.atanas.info",
+	"bugs": {
+		"url": "https://github.com/scriptex/attr-i18n/issues",
+		"email": "hi@atanas.info"
+	},
+	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
+	"main": "./dist/index.cjs",
+	"style": "dist/index.css",
+	"types": "./dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/attr-i18n"
+	},
+	"scripts": {
+		"copy": "cp -r dist demo/dist",
+		"lint": "eslint 'src/**/*.ts'",
+		"clean": "rm -rf dist demo/dist",
+		"build": "yarn clean && microbundle && yarn copy"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "5.49.0",
+		"@typescript-eslint/parser": "5.49.0",
+		"eslint": "8.32.0",
+		"eslint-config-prettier": "8.6.0",
+		"microbundle": "0.15.1",
+		"typescript": "4.9.4"
+	},
+	"type": "module",
+	"source": "src/index.ts",
+	"exports": {
+		"require": "./dist/index.cjs",
+		"default": "./dist/index.modern.js"
+	},
+	"module": "./dist/index.module.js",
+	"unpkg": "./dist/index.umd.js"
+}
