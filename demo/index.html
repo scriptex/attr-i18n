@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>attr-i18n Demo</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="https://atanas.info/images/favicon/favicon.ico" />
+
+		<style type="text/css" media="screen">
+			body {
+				font-family: sans-serif;
+				margin: 0;
+			}
+
+			main {
+				max-width: 1170px;
+				padding: 1rem;
+				margin: auto;
+			}
+
+			.docs {
+				text-align: center;
+			}
+
+			.docs,
+			.usage {
+				border-bottom: 1px solid;
+			}
+
+			.usage pre,
+			.usage table {
+				padding: 0 1rem;
+				background-color: #ccc;
+			}
+
+			.usage table {
+				width: 100%;
+				border-spacing: 0;
+				border-collapse: collapse;
+				margin-bottom: 1rem;
+			}
+
+			.usage th {
+				font-weight: 400;
+				text-align: left;
+			}
+
+			.usage th,
+			.usage td {
+				padding: 0.5rem;
+			}
+
+			.usage td {
+				border-top: 1px solid;
+			}
+
+			.form-row {
+				padding-bottom: 1rem;
+			}
+
+			.form-row label {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			.form-row select,
+			.form-row input[type='text'],
+			.form-row input[type='number'] {
+				font-size: 0.75rem;
+				line-height: 1;
+				width: 100%;
+				max-width: 30rem;
+				height: 2rem;
+				display: block;
+				border: 1px solid;
+				padding: 0.5rem;
+				box-sizing: border-box;
+			}
+
+			.form-row p {
+				margin: 0 0 1rem;
+			}
+
+			.form-row ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+
+			.form-row li {
+				display: flex;
+				align-items: center;
+			}
+
+			.form-row li + li {
+				padding-top: 0.5rem;
+			}
+
+			.form-row li label {
+				margin: 0 0 0 0.5rem;
+			}
+
+			.form-row li input {
+				margin: -0.25rem 0 0;
+				display: block;
+			}
+
+			.example button[type='submit'] {
+				color: #fff;
+				padding: 0.5rem;
+				border: 1px solid #000;
+				border-radius: 0;
+				box-shadow: none;
+				background: #000;
+			}
+		</style>
+
+		<script
+			src="https://unpkg.com/scriptex-socials"
+			async
+			integrity="sha384-FDS8WECJvE4bGb+arLPh3DSv0mrVHD+hJRf+UaM6rVMT+wBleSgUlog90rrtgHH1"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			(function (d, h, m) {
+				var js,
+					fjs = d.getElementsByTagName(h)[0];
+				if (d.getElementById(m)) {
+					return;
+				}
+				js = d.createElement(h);
+				js.id = m;
+				js.onload = function () {
+					window.makerWidgetComInit({
+						position: 'left',
+						widget: 'egtvfprlpcdjg1i4-8syknhxgseddkfli-j45otk13qspl7fts'
+					});
+				};
+				js.src = 'https://makerwidget.com/js/embed.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			})(document, 'script', 'dhm');
+		</script>
+
+		<script type="module">
+			import { AttrI18n } from './dist/index.module.js';
+
+			const languages = ['English', 'हिन्दी', 'français'];
+
+			new AttrI18n(languages, {
+				attr: 'data-translation',
+				path: 'assets/translations',
+				debug: true,
+				togglerID: 'language-toggle',
+				defaultLang: languages[0]
+			});
+		</script>
+	</head>
+
+	<body>
+		<a
+			href="https://github.com/scriptex/attr-i18n"
+			title="See code on Github"
+			class="github-fork-ribbon"
+			data-ribbon="See code on Github"
+		>
+			See code on Github
+		</a>
+
+		<main>
+			<section class="docs">
+				<h1>attr-i18n</h1>
+
+				<p>Internationalization through HTML attributes</p>
+
+				<p>
+					A tiny client-side script which provides opinionated internationalization (i18n) capabilites to your
+					website or web app.
+				</p>
+			</section>
+
+			<section class="usage">
+				<h2>Usage</h2>
+
+				<pre>
+					<code>
+import { AttrI18n } from './dist/index.module.js';
+
+const languages = ['English', 'हिन्दी', 'français'];
+
+new AttrI18n(languages, {
+	attr: 'data-translation',
+	path: 'assets/translations',
+	debug: true,
+	togglerID: 'language-toggle',
+	defaultLang: languages[0]
+});</code>
+				</pre>
+
+				<h2>Options</h2>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>attr</code></td>
+							<td><code>string</code></td>
+							<td>false</td>
+							<td><code>data-attr-i18n</code></td>
+							<td>HTML attribute which contains the translation key</td>
+						</tr>
+						<tr>
+							<td><code>path</code></td>
+							<td><code>string</code></td>
+							<td>false</td>
+							<td><code>assets/attr-i18n</code></td>
+							<td>Path to the folder which contains the translation JSON file(s)</td>
+						</tr>
+						<tr>
+							<td><code>debug</code></td>
+							<td><code>boolean</code></td>
+							<td>false</td>
+							<td><code>false</code></td>
+							<td>Turns debug mode on/off</td>
+						</tr>
+						<tr>
+							<td><code>togglerID</code></td>
+							<td><code>string</code></td>
+							<td>false</td>
+							<td><code>attr-i18n-toggler</code></td>
+							<td>ID attribute for the language toggle HTML select element</td>
+						</tr>
+						<tr>
+							<td><code>defaultLang</code></td>
+							<td><code>string</code></td>
+							<td>false</td>
+							<td><code>languages[0]</code></td>
+							<td>The default language. If not provided, the first one from the array is used</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<form action="/" method="GET" class="example">
+				<h2>Demo</h2>
+
+				<label data-translation="language">Language</label>
+
+				<select id="language-toggle">
+					<option>English</option>
+					<option>हिन्दी</option>
+					<option>français</option>
+				</select>
+
+				<h1 data-translation="form.desc">Fill Your Details!</h1>
+
+				<div class="form-row">
+					<label data-translation="form.name">Name:</label>
+
+					<input type="text" name="UserName" size="35" maxlength="35" value="" data-translation="form.name" />
+				</div>
+
+				<div class="form-row">
+					<label data-translation="form.age">Age:</label>
+
+					<input type="number" name="Age" size="35" maxlength="35" value="" data-translation="form.age" />
+				</div>
+
+				<div class="form-row">
+					<p data-translation="form.exe.desc">Do you exercise at home?</p>
+
+					<ul>
+						<li>
+							<input type="radio" name="exe" value="1" />
+
+							<label data-translation="form.exe.yes">Yes</label>
+						</li>
+
+						<li>
+							<input type="radio" name="exe" value="2" />
+
+							<label data-translation="form.exe.no">No</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="form-row">
+					<p data-translation="form.topics.desc">How do you like to read about your favorite topics?</p>
+
+					<ul>
+						<li>
+							<input type="checkbox" name="Books" />
+
+							<label data-translation="form.topics.books">Books</label>
+						</li>
+
+						<li>
+							<input type="checkbox" name="Web" />
+
+							<label data-translation="form.topics.web">Online resources</label>
+						</li>
+
+						<li>
+							<input type="checkbox" name="Phone" />
+
+							<label data-translation="form.topics.phone">Phone apps</label>
+						</li>
+
+						<li>
+							<input type="checkbox" name="Magazines" />
+
+							<label data-translation="form.topics.magazines">Magazines</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="form-row">
+					<label data-translation="form.movies.desc">What genre of movies do you like?</label>
+
+					<select name="moviepref">
+						<option data-translation="form.movies.options.comedy" value="1" selected="true">comedy</option>
+						<option data-translation="form.movies.options.romance" value="2">romance</option>
+						<option data-translation="form.movies.options.thriller" value="3">thriller</option>
+						<option data-translation="form.movies.options.horror" value="4">horror</option>
+					</select>
+				</div>
+
+				<button type="submit" data-translation="form.submit">Submit</button>
+			</form>
+		</main>
+	</body>
+</html>
