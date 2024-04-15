@@ -29,7 +29,7 @@
 	},
 	"scripts": {
 		"copy": "cp -r dist demo/dist",
-		"lint": "eslint 'src/**/*.ts'",
+		"lint": "eslint",
 		"clean": "rm -rf dist demo/dist",
 		"build": "yarn clean && microbundle && yarn copy"
 	},
@@ -37,7 +37,7 @@
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "7.6.0",
 		"@typescript-eslint/parser": "7.6.0",
-		"eslint": "8.57.0",
+		"eslint": "9.0.0",
 		"eslint-config-prettier": "9.1.0",
 		"microbundle": "0.15.1",
 		"typescript": "5.4.5"
