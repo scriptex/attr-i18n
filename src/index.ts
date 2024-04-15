@@ -207,11 +207,11 @@ export class AttrI18n {
 	private sanitizePath(path: string): string {
 		path = path.trim();
 
-		if (path[0] === '/') {
+		if (path.startsWith('/')) {
 			path = path.slice(1, path.length);
 		}
 
-		if (path[path.length - 1] === '/') {
+		if (path.endsWith('/')) {
 			path = path.slice(0, -1);
 		}
 
@@ -223,6 +223,7 @@ export class AttrI18n {
 			return;
 		}
 
+		// eslint-disable-next-line no-console
 		console[level](`${DEFAULT_NAME} | ${message}`);
 	}
 }

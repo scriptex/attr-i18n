@@ -29,7 +29,7 @@
 	},
 	"scripts": {
 		"copy": "cp -r dist demo/dist",
-		"lint": "eslint 'src/**/*.ts'",
+		"lint": "eslint",
 		"clean": "rm -rf dist demo/dist",
 		"build": "yarn clean && microbundle && yarn copy"
 	},
