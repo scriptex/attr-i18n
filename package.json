@@ -35,9 +35,9 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "8.26.1",
-		"@typescript-eslint/parser": "8.26.1",
-		"eslint": "9.22.0",
+		"@typescript-eslint/eslint-plugin": "8.29.0",
+		"@typescript-eslint/parser": "8.29.0",
+		"eslint": "9.23.0",
 		"eslint-config-prettier": "10.1.1",
 		"microbundle": "0.15.1",
 		"typescript": "5.8.2"
